@@ -1,0 +1,40 @@
+{% extends 'main/base.html' %}
+
+{% block content %}
+
+<h2>{{ error }}</h2>
+
+<h1>{{ course.name }}</h1>
+
+{% if user.id == course.instructor.id %}
+<h3>Course Code: {{course.join_code}} </h3>
+<p>Tell this code to your students so that they can join.</p>
+{% endif %}
+
+<h2>Instructor: 
+    <a href="{% url 'userprofile' course.instructor.id %}">
+    {{course.instructor.first_name}} {{course.instructor.last_name}}
+    </a>
+</h2>
+
+<br>
+
+<h3>Teaching Assistants</h3>
+
+<ul>
+    {% for ta in tas %}
+    <li>
+        <a href="{% url 'userprofile' ta.id %}">
+            {{ta.first_name}} {{ta.last_name}}
+        </a>
+    </li>
+    {% endfor %}
+</ul>
+
+<br>
+
+
+
+
+
+{% endblock %}
