@@ -12,6 +12,9 @@ from .models import Course, Enrollment
 def home(request):
     return render(request, 'main/home.html')
 
+def faq(request):
+    return render(request, 'main/faq.html')
+
 @login_required
 def courses(request):
     is_teacher = False

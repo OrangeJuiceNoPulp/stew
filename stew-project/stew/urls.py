@@ -27,6 +27,7 @@ urlpatterns = [
     path('createcourse/', views.createcourse, name='createcourse'),
     path('joincourse/', views.joincourse, name='joincourse'),
     path('course/<int:course_pk>/', views.coursehome, name='coursehome'),
+    path('faq/', views.faq, name='faq'),
     
     #Account Management
     path('logout/', views.logoutaccount, name='logoutaccount'),
