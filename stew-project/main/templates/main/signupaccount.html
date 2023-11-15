@@ -29,7 +29,17 @@
 
 <p>
     <label for="id_password1">Password:</label>
-    <input type="password" name="password1" autocomplete="current-password" maxlength="150" required id="id_password1">
+    <input
+        type="password"
+        name="password1"
+        autocomplete="current-password"
+        maxlength="150"
+        required
+        pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+        oninvalid="this.setCustomValidity('Password must contain at least one digit, one lowercase letter, one uppercase letter, and be at least 8 characters long')"
+        oninput="this.setCustomValidity('')"
+        id="id_password1"
+    >
 </p>
 <p>
     <label for="id_password2">Confirm Password:</label>
